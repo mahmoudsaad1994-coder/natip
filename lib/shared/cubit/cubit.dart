@@ -43,7 +43,14 @@ class NewsCubit extends Cubit<NewsStates> {
     const ScienceScreen(),
   ];
 
+  List<String> titles = [
+    'Business News',
+    'Sports News',
+    'Science News',
+  ];
+
   List business = [];
+
   getBusiness() {
     emit(NewsGetBusinessLoadingState());
 
@@ -63,6 +70,7 @@ class NewsCubit extends Cubit<NewsStates> {
   }
 
   List sports = [];
+
   getSports() {
     if (sports.isEmpty) {
       emit(NewsGetSportsLoadingState());
@@ -86,6 +94,7 @@ class NewsCubit extends Cubit<NewsStates> {
   }
 
   List science = [];
+
   getScience() {
     if (science.isEmpty) {
       emit(NewsGetScienceLoadingState());
@@ -108,6 +117,7 @@ class NewsCubit extends Cubit<NewsStates> {
   }
 
   List search = [];
+
   getSearch(String value) {
     emit(NewsGetSearchLoadingState());
 
